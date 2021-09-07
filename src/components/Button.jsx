@@ -16,6 +16,6 @@ function Button({ onClick, className, outline, children }) {
 
 const buttonPropsAreEqual = (prevButton, nextButton) => {
     return prevButton.onClick === nextButton.onClick
-  }
+}
 
 export default React.memo(Button, buttonPropsAreEqual);

@@ -5,3 +5,7 @@
 .input-empty {
   border: 1px solid rgba(255, 0, 0, 0.75) !important;
 }
+
+.visible {
+  display: flex !important;
+}

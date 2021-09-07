@@ -6,3 +6,4 @@ export { default as AddFolder } from './AddFolder';
 export { default as Button } from './Button';
 export { default as ColoredItems } from './ColoredItems';
 export { default as Content } from './Content';
+export { default as Editor } from './Editor';

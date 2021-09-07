@@ -50,7 +50,7 @@ function AddFolder() {
       id: `f${(~~(Math.random() * 1e8)).toString(16)}`,
     };
     dispatch(postFolder(folder));
-    dispatch(setFolderFilter(folder.id, folder.name));
+    dispatch(setFolderFilter(folder.id, folder.name, folder.colorName, folder.colorCode));
     setInputFolderName('');
     setVisiblePopup(!visiblePopup);
   }, [inputFolderName, selectedColor]);

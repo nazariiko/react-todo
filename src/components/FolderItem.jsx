@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import deleteIcon from '../assets/images/delete.svg';
 
-function FolderItem({ id, name, colorName, activeFolderId, onClick, onClickDeleteFolder }) {
+function FolderItem({ id, name, colorName, colorCode, activeFolderId, onClick, onClickDeleteFolder }) {
 
   const formatName = (name) => {
     if (name.length > 18) {
@@ -15,7 +15,7 @@ function FolderItem({ id, name, colorName, activeFolderId, onClick, onClickDelet
 
   return (
     <li
-      onClick={() => onClick(id, name)}
+      onClick={() => onClick(id, name, colorName, colorCode)}
       className={classNames('folders-list__item', {
         'active-folder': activeFolderId,
       })}>

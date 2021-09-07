@@ -1,5 +1,6 @@
 @import url(./folder-colors.css);
 @import url(./options.css);
+@import url(./editor-js.css);
 
 *,
 *:after,
@@ -41,6 +42,7 @@ ol {
   background: #ffffff;
   box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
+  position: relative;
 }
 
 /***********************/
@@ -270,7 +272,7 @@ ol {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
-  min-height: 90px;
+  max-height: 90px;
   margin-bottom: 15px;
 }
 

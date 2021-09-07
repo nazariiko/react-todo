@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFolders, deleteFolder } from '../redux/actions/folders';
+import { deleteTasksWithFolder } from '../redux/actions/tasks'
 
 import { setFolderFilter } from '../redux/actions/filter';
 
@@ -11,15 +12,16 @@ function FoldersList() {
   const folders = useSelector((state) => state.folders.items);
   const activeFolderId = useSelector(state => state.filter.activeFolderId)
 
-  const handleSetactiveFolderId = (id, name) => {
+  const handleSetactiveFolder = (id, name, colorName, colorCode) => {
     if (activeFolderId !== id) {
-      dispatch(setFolderFilter(id, name));
+      dispatch(setFolderFilter(id, name, colorName, colorCode));
     }
   };
 
   const handleDeleteFolder = (id) => {
     dispatch(deleteFolder(id));
-    dispatch(setFolderFilter(null, 'All'));
+    deleteTasksWithFolder(id);
+    dispatch(setFolderFilter(null, 'All', 'gray', '#E7E7E7'));
   };
 
   React.useEffect(() => {
@@ -34,7 +36,7 @@ function FoldersList() {
             {...folder}
             key={folder.id}
             activeFolderId={folder.id === activeFolderId}
-            onClick={handleSetactiveFolderId}
+            onClick={handleSetactiveFolder}
             onClickDeleteFolder={handleDeleteFolder}
           />
         ))}
@@ -43,7 +45,7 @@ function FoldersList() {
         id={null}
         name={'All'}
         colorName={'gray'}
-        onClick={handleSetactiveFolderId}
+        onClick={handleSetactiveFolder}
         activeFolderId={activeFolderId === null}
       />
     </ul>
