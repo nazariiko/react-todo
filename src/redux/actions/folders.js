@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {JSON_API } from '../../api.js';
 
 export const fetchFolders = () => (dispatch) => {
-  axios.get('/folders').then(({ data }) => {
+  axios.get(`${JSON_API}/folders`).then(({ data }) => {
     dispatch(setFolders(data));
   });
 };
@@ -12,7 +13,7 @@ export const setFolders = (items) => ({
 });
 
 export const postFolder = (folder) => (dispatch) => {
-  axios.post('/folders', folder).then(({ data }) => {
+  axios.post(`${JSON_API}/folders`, folder).then(({ data }) => {
     dispatch(addFolder(data));
   });
 };
@@ -23,7 +24,7 @@ export const addFolder = (items) => ({
 });
 
 export const deleteFolder = (id) => (dispatch) => {
-  axios.delete(`/folders/${id}`).then(() => {
+  axios.delete(`${JSON_API}/folders/${id}`).then(() => {
     dispatch(minusFolder(id));
   });
 };

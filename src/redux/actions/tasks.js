@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {JSON_API } from '../../api';
 
 export const fetchTasks = (activeFolderName) => (dispatch) => {
-  axios.get(`/tasks${activeFolderName === 'All' ? '' : `?folder.name=${activeFolderName}`}`).then(({ data }) => {
+  axios.get(`${JSON_API}/tasks${activeFolderName === 'All' ? '' : `?folder.name=${activeFolderName}`}`).then(({ data }) => {
     dispatch(setTasks(data));
   });
 };
@@ -12,7 +13,7 @@ export const setTasks = (items) => ({
 });
 
 export const postTask = (task) => (dispatch) => {
-  axios.post('/tasks', task).then(({ data }) => {
+  axios.post(`${JSON_API}/tasks`, task).then(({ data }) => {
     dispatch(addTask(data))
   })
 }
@@ -23,7 +24,7 @@ export const addTask = (data) => ({
 })
 
 export const deleteTask = (id) => (dispatch) => {
-  axios.delete(`/tasks/${id}`).then(() => {
+  axios.delete(`${JSON_API}/tasks/${id}`).then(() => {
     dispatch(minusTask(id));
   });
 };
@@ -34,11 +35,11 @@ export const minusTask = (id) => ({
 });
 
 export const deleteTasksWithFolder = (id) => {
-  axios.delete(`/tasks?folderId=${id}`)
+  axios.delete(`${JSON_API}/tasks?folderId=${id}`)
 }
 
 export const patchTask = (id, content) => (dispatch) => {
-  axios.patch(`/tasks/${id}`, content).then(() => {
+  axios.patch(`${JSON_API}/tasks/${id}`, content).then(() => {
     dispatch(updateTask(id, content));
   });
 };

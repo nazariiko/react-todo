@@ -1,0 +1,1 @@
+export const JSON_API = 'https://react-todo-nazariiko.herokuapp.com/api'
