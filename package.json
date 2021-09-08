@@ -17,7 +17,8 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "json-server": "^0.16.3"
   },
   "scripts": {
     "start": "node server.js",
@@ -25,7 +26,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3080",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -43,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "json-server": "^0.16.3"
   }
 }
