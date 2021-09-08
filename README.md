@@ -1,4 +1,4 @@
-# A deployed ToDo application is available on heroku: https://react-todo-nazariiko.herokuapp.com
+## A deployed ToDo application is available on heroku: https://react-todo-nazariiko.herokuapp.com
 
 # Getting Started with Create React App
 
