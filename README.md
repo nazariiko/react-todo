@@ -1,5 +1,4 @@
 ## A deployed ToDo application is available on heroku:
-### (10s to build)
 ### https://react-todo-nazariiko.herokuapp.com 
 
 Stack:
